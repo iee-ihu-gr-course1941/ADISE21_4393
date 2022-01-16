@@ -1,14 +1,6 @@
 <?php
 
-/* Code by David McKeown - craftedbydavid.com */
-/* Editable entries are bellow */
 
-$send_to = "support@imransdesign.com"; //Change to Your Own Email address here.
-$send_subject = "Message From N.Agency ";
-
-
-
-/*Be careful when editing below this line */
 
 $f_name = cleanupentries($_POST["name"]);
 $f_email = cleanupentries($_POST["email"]);
