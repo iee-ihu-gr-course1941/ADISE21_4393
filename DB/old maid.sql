@@ -1,9 +1,8 @@
 DROP TABLE IF EXISTS board;
 CREATE TABLE board (
   card_id tinyint NOT NULL,
-  c_value tinyint NOT NULL,
   c_score tinyint NOT NULL,
-  c_position nvarchar (255) NOT NULL CHECK([c_position] IN ('deck','stack','top', 'hand1','hand2','won1','won2','dry1','dry2')) DEFAULT 'deck',
+  c_position nvarchar (255) NOT NULL CHECK([c_position] IN ('deck','stack','top', 'hand1','hand2','won1','won2')) DEFAULT 'deck',
   c_order tinyint DEFAULT NULL
 );
 
@@ -72,9 +71,8 @@ INSERT INTO board VALUES (52, 13, 1, 'deck', NULL);
 DROP TABLE IF EXISTS board_empty;
 CREATE TABLE board_empty (
   card_id tinyint NOT NULL,
-  c_value tinyint NOT NULL,
   c_score tinyint NOT NULL,
-  c_position nvarchar(255)NOT NULL CHECK ([c_position] IN('deck','stack','top','hand1','hand2','won1','won2','dry1','dry2'))  DEFAULT 'deck',
+  c_position nvarchar(255)NOT NULL CHECK ([c_position] IN('deck','stack','top','hand1','hand2','won1','won2'))  DEFAULT 'deck',
   c_order tinyint DEFAULT NULL
 );
 
