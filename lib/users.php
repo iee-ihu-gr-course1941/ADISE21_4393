@@ -2,7 +2,7 @@
 
 function show_users() {
 	global $mysqli;
-	$sql = 'select username,piece_color from players';
+	$sql = 'select username from players';
 	$st = $mysqli->prepare($sql);
 	$st->execute();
 	$res = $st->get_result();
@@ -11,7 +11,7 @@ function show_users() {
 }
 function show_user($b) {
 	global $mysqli;
-	$sql = 'select username,piece_color from players where piece_color=?';
+	$sql = 'select username from players where piece_color=?';
 	$st = $mysqli->prepare($sql);
 	$st->bind_param('s',$b);
 	$st->execute();
@@ -48,7 +48,7 @@ function set_user($b,$input) {
 
 	
 	update_game_status();
-	$sql = 'select * from players where piece_color=?';
+	$sql = 'select * from players where token=?';
 	$st = $mysqli->prepare($sql);
 	$st->bind_param('s',$b);
 	$st->execute();
